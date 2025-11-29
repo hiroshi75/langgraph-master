@@ -1,13 +1,13 @@
 {
-  "name": "protografico",
+  "name": "langgraph-master",
   "owner": {
     "name": "Hiroshi Ayukawa"
   },
   "plugins": [
     {
-      "name": "protografico",
+      "name": "langgraph-master",
       "description": "LangGraph development accelerator - Architecture patterns, parallel module development, and data-driven optimization for building AI agents",
-      "source": "./protografico"
+      "source": "./langgraph-master"
     }
   ]
 }

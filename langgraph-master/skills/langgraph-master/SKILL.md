@@ -85,11 +85,11 @@ Each file is kept short and concise, allowing you to reference only the sections
 
 ## 🤖 Efficient Implementation: Utilizing Subagents
 
-To accelerate LangGraph application development, utilize the dedicated subagent `protografico:langgraph-engineer`.
+To accelerate LangGraph application development, utilize the dedicated subagent `langgraph-master:langgraph-engineer`.
 
 ### Subagent Characteristics
 
-**protografico:langgraph-engineer** is an agent specialized in implementing functional modules:
+**langgraph-master:langgraph-engineer** is an agent specialized in implementing functional modules:
 
 - **Functional Unit Scope**: Implements complete functionality with multiple nodes, edges, and state definitions as a set
 - **Parallel Execution Optimization**: Designed for multiple agents to develop different functional modules simultaneously
@@ -99,7 +99,7 @@ To accelerate LangGraph application development, utilize the dedicated subagent 
 
 ### When to Use
 
-Use protografico:langgraph-engineer in the following cases:
+Use langgraph-master:langgraph-engineer in the following cases:
 
 1. **When functional module implementation is needed**
 
@@ -124,9 +124,9 @@ Use protografico:langgraph-engineer in the following cases:
 
 ```
 Planner → Decompose into functional units
-  ├─ protografico:langgraph-engineer 1: Intent analysis module (parallel)
+  ├─ langgraph-master:langgraph-engineer 1: Intent analysis module (parallel)
   │  └─ analyze + classify + route nodes + conditional edges
-  └─ protografico:langgraph-engineer 2: RAG search module (parallel)
+  └─ langgraph-master:langgraph-engineer 2: RAG search module (parallel)
      └─ retrieve + rerank + generate nodes + state management
 Orchestrator → Integrate modules to assemble graph
 ```
@@ -146,7 +146,7 @@ Orchestrator → Integrate modules to assemble graph
 
 3. **Parallel Execution**
 
-   Assign one functional module implementation to each protografico:langgraph-engineer agent and execute in parallel
+   Assign one functional module implementation to each langgraph-master:langgraph-engineer agent and execute in parallel
 
    - Implement independent functional modules simultaneously
 
@@ -162,7 +162,7 @@ Orchestrator → Integrate modules to assemble graph
 
 ### Functional Module Examples
 
-**Appropriate Size (protografico:langgraph-engineer scope)**:
+**Appropriate Size (langgraph-master:langgraph-engineer scope)**:
 
 - RAG search functionality: retrieve + rerank + generate (3 nodes)
 - Intent analysis: analyze + classify + route (2-3 nodes)

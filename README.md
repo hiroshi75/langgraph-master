@@ -1,13 +1,17 @@
-# ProtoGrafico Plugin
+# LangGraph Master Plugin
 
 **Build LangGraph agents faster. Optimize them systematically.**
 
 A Claude Code plugin that provides architecture patterns, parallel development workflows, and data-driven optimization for LangGraph applications.
 
+<p align="center">
+  <img src="main_ss.gif" alt="LangGraph Master in action" width="800">
+</p>
+
 ```
 # Install
-/plugin marketplace add hiroshi75/protografico
-/plugin install protografico@hiroshi75
+/plugin marketplace add hiroshi75/langgraph-master
+/plugin install langgraph-master@hiroshi75
 ```
 
 ## What You Get
@@ -99,10 +103,10 @@ Just start coding. Claude provides patterns automatically.
 
 ```bash
 # Prompt-level optimization (no structure changes)
-/protografico:fine-tune
+/langgraph-master:fine-tune
 
 # Architecture-level optimization (structure changes)
-/protografico:arch-tune "Reduce latency by 30%"
+/langgraph-master:arch-tune "Reduce latency by 30%"
 ```
 
 ### Build Modules in Parallel

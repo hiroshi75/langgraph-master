@@ -5,8 +5,8 @@
 ## Installation
 
 ```
-/plugin marketplace add hiroshi75/ccplugins
-/plugin install protografico@hiroshi75
+/plugin marketplace add hiroshi75/langgraph-master
+/plugin install langgraph-master@hiroshi75
 ```
 
 ## Automatic Triggers
@@ -32,13 +32,13 @@ Detect LangGraph context → Auto-invoke skill → Provide patterns/guidance →
 To manually trigger LangGraph guidance:
 
 ```
-/protografico:langgraph-master
+/langgraph-master:langgraph-master
 ```
 
 For learning specific patterns:
 
 ```
-/protografico:langgraph-master "explain routing pattern"
+/langgraph-master:langgraph-master "explain routing pattern"
 ```
 
 ## Learning Resources
@@ -57,7 +57,7 @@ The skill provides comprehensive documentation covering:
 
 ## Subagent: langgraph-engineer
 
-The skill includes a specialized **protografico:langgraph-engineer** subagent for efficient parallel development:
+The skill includes a specialized **langgraph-master:langgraph-engineer** subagent for efficient parallel development:
 
 ### Key Features
 
