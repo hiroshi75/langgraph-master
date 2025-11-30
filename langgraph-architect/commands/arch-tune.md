@@ -36,7 +36,7 @@ Update each Phase to `in_progress` at the start and `completed` upon completion.
 **Execution Steps**:
 
 1. **Launch the `arch-analysis` skill**
-   - Verify/create evaluation program (`.langgraph-master/evaluation/`)
+   - Verify/create evaluation program (`.langgraph-architect/evaluation/`)
    - Measure baseline performance (3-5 runs)
    - Analyze graph structure (using Serena MCP)
    - Identify bottlenecks
@@ -48,7 +48,7 @@ Update each Phase to `in_progress` at the start and `completed` upon completion.
 - `analysis/baseline_performance.json` - Baseline performance (including statistics)
 - `analysis/analysis_report.md` - Current state analysis and issues
 - `analysis/improvement_proposals.md` - Detailed improvement proposals (Proposal 1-5)
-- `.langgraph-master/evaluation/` - Evaluation program (created or verified)
+- `.langgraph-architect/evaluation/` - Evaluation program (created or verified)
 
 → See arch-analysis skill for detailed procedures and workflow
 
@@ -75,7 +75,7 @@ Update each Phase to `in_progress` at the start and `completed` upon completion.
    done
 
    # If evaluation program is in original directory, make it executable in each worktree
-   # (No copy needed if using shared .langgraph-master/evaluation/)
+   # (No copy needed if using shared .langgraph-architect/evaluation/)
    ```
 
    **Directory Structure**:
@@ -236,7 +236,7 @@ Claude Code automatically executes in parallel by calling multiple `Task` tools 
 
 1. **Evaluation Program Location**:
 
-   - Recommended: Place in `.langgraph-master/evaluation/` (accessible from all worktrees)
+   - Recommended: Place in `.langgraph-architect/evaluation/` (accessible from all worktrees)
    - Each worktree references the baseline copied to `analysis/`
 
 2. **Unified Evaluation Conditions**:
@@ -299,4 +299,4 @@ Claude Code automatically executes in parallel by calling multiple `Task` tools 
 - [proposal-comparator agent](../agents/proposal-comparator.md) - Results comparison and recommendation selection (Phase 4)
 - [merge-coordinator agent](../agents/merge-coordinator.md) - User approval and merge execution (Phase 5)
 - [fine-tune skill](../skills/fine-tune/SKILL.md) - Prompt optimization (used by langgraph-tuner)
-- [langgraph-master skill](../skills/langgraph-master/SKILL.md) - Architectural patterns
+- [langgraph-architect skill](../skills/langgraph-architect/SKILL.md) - Architectural patterns

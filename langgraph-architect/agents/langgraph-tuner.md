@@ -63,7 +63,7 @@ Implementation:
 │   ├─ Add subgraphs if needed
 │   ├─ Update state schema
 │   └─ Add parallel processing
-├─ Follow LangGraph patterns from langgraph-master skill
+├─ Follow LangGraph patterns from langgraph-architect skill
 └─ Ensure code quality and type hints
 
 Key considerations:
@@ -199,7 +199,7 @@ tests/test_nodes.py::test_retrieval_node_2 PASSED                            [26
 
 - **イテレーション数**: 5 回
 - **テストケース数**: 20 件
-- **評価プログラム**: `.langgraph-master/evaluation/evaluate.py`
+- **評価プログラム**: `.langgraph-architect/evaluation/evaluate.py`
 
 ### パフォーマンス比較
 
@@ -299,7 +299,7 @@ tests/test_nodes.py::test_retrieval_node_2 PASSED                            [26
 
 ## Skill Integration
 
-### langgraph-master Skill
+### langgraph-architect Skill
 
 - Consult for architecture patterns
 - Verify implementation follows best practices
@@ -342,7 +342,7 @@ worktree/
 └── proposal-X/           # Your isolated environment
     ├── src/              # Code to modify
     ├── tests/            # Tests to run
-    ├── .langgraph-master/
+    ├── .langgraph-architect/
     │   ├── fine-tune.md  # Optimization goals
     │   └── evaluation/   # Evaluation programs
     └── [project files]

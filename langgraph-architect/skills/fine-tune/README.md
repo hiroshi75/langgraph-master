@@ -27,7 +27,7 @@ The fine-tune skill helps you improve the performance of existing LangGraph appl
 
 Understand optimization targets and current state.
 
-- Load objectives from `.langgraph-master/fine-tune.md`
+- Load objectives from `.langgraph-architect/fine-tune.md`
 - Identify optimization targets using Serena MCP
 - Create prioritized optimization target list
 

@@ -11,7 +11,7 @@ A skill for iteratively optimizing prompts and processing logic in each node of 
 
 This skill executes the following process to improve the performance of existing LangGraph applications:
 
-1. **Load Objectives**: Retrieve optimization goals and evaluation criteria from `.langgraph-master/fine-tune.md` (if this file doesn't exist, help the user create it based on their requirements)
+1. **Load Objectives**: Retrieve optimization goals and evaluation criteria from `.langgraph-architect/fine-tune.md` (if this file doesn't exist, help the user create it based on their requirements)
 2. **Identify Optimization Targets**: Extract nodes containing LLM prompts using Serena MCP (if Serena MCP is unavailable, investigate the codebase using ls, read, etc.)
 3. **Baseline Evaluation**: Measure current performance through multiple runs
 4. **Implement Improvements**: Identify the most effective improvement areas and optimize prompts and processing logic
@@ -32,7 +32,7 @@ Use this skill in the following situations:
 
 2. **When evaluation criteria are clear**
 
-   - Optimization goals are defined in `.langgraph-master/fine-tune.md`
+   - Optimization goals are defined in `.langgraph-architect/fine-tune.md`
    - Quantitative evaluation methods are established
 
 3. **When improvements through prompt engineering are expected**
@@ -48,7 +48,7 @@ Use this skill in the following situations:
 
 **Main Steps**:
 
-1. Load objective setting file (`.langgraph-master/fine-tune.md`)
+1. Load objective setting file (`.langgraph-architect/fine-tune.md`)
 2. Identify optimization targets (Serena MCP or manual code investigation)
 3. Create optimization target list (evaluate improvement potential for each node)
 

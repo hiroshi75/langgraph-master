@@ -10,7 +10,7 @@ Practical code examples and templates.
 
 ### Example 1.1: fine-tune.md Structure Example
 
-**File**: `.langgraph-master/fine-tune.md`
+**File**: `.langgraph-architect/fine-tune.md`
 
 ```markdown
 # Fine-Tuning Goals

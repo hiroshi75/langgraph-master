@@ -1,4 +1,4 @@
-# LangGraph Master Plugin
+# LangGraph Architect Plugin
 
 **Build LangGraph agents faster. Optimize them systematically.**
 
@@ -10,8 +10,8 @@ A Claude Code plugin that provides architecture patterns, parallel development w
 
 ```
 # Install
-/plugin marketplace add hiroshi75/langgraph-master
-/plugin install langgraph-master@hiroshi75
+/plugin marketplace add hiroshi75/langgraph-architect
+/plugin install langgraph-architect@hiroshi75
 ```
 
 ## What You Get
@@ -49,13 +49,16 @@ Both run in parallel → integrate into complete graph
 
 ### 3. Prompt-Level Optimization (fine-tune)
 
-The `fine-tune` skill optimizes your LangGraph prompts without changing graph structure. It activates automatically when Claude detects optimization needs, or invoke manually:
+The `fine-tune` skill optimizes your LangGraph prompts without changing graph structure. It activates automatically when Claude detects optimization needs, or invoke manually by `/fine-tune`.
 
 ```bash
-/langgraph-master:fine-tune
+/fine-tune Fine-Tuning objective: Increase concreteness.
+Revise the base prompt so that the generated reports become more concrete and technical, not abstract or generic. Require the model to use specific components, data flows, algorithms, failure modes, and examples.
+Use an LLM-based evaluator to assess “concreteness,” and place the evaluation script under eval/. Use that evaluator during tuning.
 ```
 
 **Auto-activation triggers:**
+
 - "improve accuracy", "reduce cost", "optimize prompts"
 - "the output is not good enough", "responses are inconsistent"
 
@@ -90,11 +93,11 @@ What happens:
 
 ## Skills
 
-| Skill              | Purpose                                                        |
-| ------------------ | -------------------------------------------------------------- |
-| `langgraph-master` | Architecture patterns and implementation guidance              |
-| `fine-tune`        | Iterative prompt optimization without changing graph structure |
-| `arch-analysis`    | Analyze bottlenecks and generate improvement proposals         |
+| Skill                 | Purpose                                                        |
+| --------------------- | -------------------------------------------------------------- |
+| `langgraph-architect` | Architecture patterns and implementation guidance              |
+| `fine-tune`           | Iterative prompt optimization without changing graph structure |
+| `arch-analysis`       | Analyze bottlenecks and generate improvement proposals         |
 
 ## Agents
 
@@ -127,11 +130,13 @@ Just start coding. Claude provides patterns automatically.
 ### Optimize an Existing Graph
 
 ```bash
-# Prompt-level optimization (no structure changes)
-/langgraph-master:fine-tune
+# Prompt-level optimization (no structure changes). It can be auto-triggered or manual by `/fine-tune`.
+/fine-tune "Increase accuracy by 15%"
+```
 
+```bash
 # Architecture-level optimization (structure changes)
-/langgraph-master:arch-tune "Reduce latency by 30%"
+/arch-tune "Reduce latency by 30%"
 ```
 
 ### Build Modules in Parallel
@@ -202,7 +207,7 @@ Result: Complete implementation in ~20 min instead of ~60 min
 ├── plugin.json
 
 skills/
-├── langgraph-master/      # 40+ documentation files
+├── langgraph-architect/      # 40+ documentation files
 │   ├── SKILL.md
 │   ├── 01_core_concepts_*.md
 │   ├── 02_graph_architecture_*.md

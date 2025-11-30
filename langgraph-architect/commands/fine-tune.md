@@ -38,7 +38,7 @@ Update each Phase to `in_progress` at the start and `completed` upon completion.
 
 1. **Load Objective Settings**
 
-   - Check for `.langgraph-master/fine-tune.md`
+   - Check for `.langgraph-architect/fine-tune.md`
    - If not exists, help user create optimization goals
 
 2. **Identify Optimization Targets**
@@ -65,7 +65,7 @@ Update each Phase to `in_progress` at the start and `completed` upon completion.
 
 1. **Prepare Evaluation Environment**
 
-   - Check/create evaluation program in `.langgraph-master/evaluation/`
+   - Check/create evaluation program in `.langgraph-architect/evaluation/`
    - Prepare test cases covering edge cases
    - Define metrics (accuracy, latency, cost)
 
@@ -100,13 +100,13 @@ Update each Phase to `in_progress` at the start and `completed` upon completion.
 
    Apply techniques based on the issue:
 
-   | Issue                | Technique                      | Expected Gain    |
-   | -------------------- | ------------------------------ | ---------------- |
-   | Low accuracy         | Few-shot examples              | +10-20% accuracy |
-   | Inconsistent output  | Structured output format       | -90% parse error |
-   | High cost            | Model downgrade, prompt cache  | -40-60% cost     |
-   | Slow response        | Streaming, parallel processing | -30-50% latency  |
-   | Poor edge case       | Chain-of-thought prompting     | +15-25% accuracy |
+   | Issue               | Technique                      | Expected Gain    |
+   | ------------------- | ------------------------------ | ---------------- |
+   | Low accuracy        | Few-shot examples              | +10-20% accuracy |
+   | Inconsistent output | Structured output format       | -90% parse error |
+   | High cost           | Model downgrade, prompt cache  | -40-60% cost     |
+   | Slow response       | Streaming, parallel processing | -30-50% latency  |
+   | Poor edge case      | Chain-of-thought prompting     | +15-25% accuracy |
 
 3. **Post-Improvement Evaluation**
 
@@ -137,11 +137,11 @@ Update each Phase to `in_progress` at the start and `completed` upon completion.
 
    ### Summary
 
-   | Metric   | Baseline | Final  | Improvement |
-   | -------- | -------- | ------ | ----------- |
-   | Accuracy | X%       | Y%     | +Z%         |
-   | Cost     | $X/1000  | $Y/1000| -Z%         |
-   | Latency  | Xms      | Yms    | -Z%         |
+   | Metric   | Baseline | Final   | Improvement |
+   | -------- | -------- | ------- | ----------- |
+   | Accuracy | X%       | Y%      | +Z%         |
+   | Cost     | $X/1000  | $Y/1000 | -Z%         |
+   | Latency  | Xms      | Yms     | -Z%         |
 
    ### Changes Made
 
@@ -210,19 +210,19 @@ If fine-tune cannot achieve goals after 3-5 iterations, consider:
 
 ```bash
 # Improve accuracy
-/langgraph-master:fine-tune "Improve classification accuracy to 95%"
+/fine-tune "Improve classification accuracy to 95%"
 
 # Reduce costs
-/langgraph-master:fine-tune "Reduce API costs by 40%"
+/fine-tune "Reduce API costs by 40%"
 
 # Multiple goals
-/langgraph-master:fine-tune "Improve accuracy to 90% while reducing latency by 30%"
+/fine-tune "Improve accuracy to 90% while reducing latency by 30%"
 ```
 
 ### Example Workflow
 
 ```
-User: /langgraph-master:fine-tune "Improve response quality"
+User: /fine-tune "Improve response quality"
 
 Claude:
 1. [Phase 1] Analyzing codebase... Found 3 LLM-calling nodes

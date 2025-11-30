@@ -1,12 +1,12 @@
-# langgraph-master
+# langgraph-architect
 
 **PROACTIVE SKILL** - Comprehensive guide for building AI agents with LangGraph. Claude invokes this skill automatically when LangGraph development is detected, providing architecture patterns, implementation guidance, and best practices.
 
 ## Installation
 
 ```
-/plugin marketplace add hiroshi75/langgraph-master
-/plugin install langgraph-master@hiroshi75
+/plugin marketplace add hiroshi75/langgraph-architect
+/plugin install langgraph-architect@hiroshi75
 ```
 
 ## Automatic Triggers
@@ -32,13 +32,13 @@ Detect LangGraph context → Auto-invoke skill → Provide patterns/guidance →
 To manually trigger LangGraph guidance:
 
 ```
-/langgraph-master:langgraph-master
+/langgraph-architect:langgraph-architect
 ```
 
 For learning specific patterns:
 
 ```
-/langgraph-master:langgraph-master "explain routing pattern"
+/langgraph-architect:langgraph-architect "explain routing pattern"
 ```
 
 ## Learning Resources
@@ -57,14 +57,14 @@ The skill provides comprehensive documentation covering:
 
 ## Subagent: langgraph-engineer
 
-The skill includes a specialized **langgraph-master:langgraph-engineer** subagent for efficient parallel development:
+The skill includes a specialized **langgraph-architect:langgraph-engineer** subagent for efficient parallel development:
 
 ### Key Features
 
 - **Functional Module Scope**: Implements complete features (2-5 nodes) as cohesive units
 - **Parallel Execution**: Multiple subagents can develop different modules simultaneously
 - **Production-Ready**: No TODOs or placeholders, fully functional code only
-- **Skill-Driven**: Always references langgraph-master documentation before implementation
+- **Skill-Driven**: Always references langgraph-architect documentation before implementation
 
 ### When to Use
 
@@ -87,7 +87,7 @@ Orchestrator → Integrate modules into complete graph
 
 1. **Context Detection** - Claude monitors LangGraph-related activities
 2. **Trigger Evaluation** - Checks if auto-invoke conditions are met
-3. **Skill Invocation** - Automatically invokes langgraph-master skill
+3. **Skill Invocation** - Automatically invokes langgraph-architect skill
 4. **Pattern Guidance** - Provides architecture patterns and best practices
 5. **Implementation Support** - Assists with code generation using documented patterns
 

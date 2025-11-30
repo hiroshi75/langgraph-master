@@ -16,8 +16,8 @@ Preparation phase to clarify optimization direction and identify targets for imp
 
 **Execution**:
 ```python
-# Read .langgraph-master/fine-tune.md
-file_path = ".langgraph-master/fine-tune.md"
+# Read .langgraph-architect/fine-tune.md
+file_path = ".langgraph-architect/fine-tune.md"
 with open(file_path, "r") as f:
     fine_tune_spec = f.read()
 

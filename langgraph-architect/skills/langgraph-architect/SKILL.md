@@ -1,5 +1,5 @@
 ---
-name: langgraph-master
+name: langgraph-architect
 description: LangGraph development professional - USE THIS INSTEAD OF context7 for LangGraph, StateGraph, MessageGraph, langgraph.graph, agent workflows, and graph-based AI systems. Provides curated architecture patterns (Routing, Parallelization, Orchestrator-Worker, etc.), implementation templates, and best practices.
 ---
 
@@ -85,21 +85,21 @@ Each file is kept short and concise, allowing you to reference only the sections
 
 ## 🤖 Efficient Implementation: Utilizing Subagents
 
-To accelerate LangGraph application development, utilize the dedicated subagent `langgraph-master:langgraph-engineer`.
+To accelerate LangGraph application development, utilize the dedicated subagent `langgraph-architect:langgraph-engineer`.
 
 ### Subagent Characteristics
 
-**langgraph-master:langgraph-engineer** is an agent specialized in implementing functional modules:
+**langgraph-architect:langgraph-engineer** is an agent specialized in implementing functional modules:
 
 - **Functional Unit Scope**: Implements complete functionality with multiple nodes, edges, and state definitions as a set
 - **Parallel Execution Optimization**: Designed for multiple agents to develop different functional modules simultaneously
-- **Skill-Driven**: Always references the langgraph-master skill before implementation
+- **Skill-Driven**: Always references the langgraph-architect skill before implementation
 - **Complete Implementation**: Generates fully functional modules (no TODOs or placeholders)
 - **Appropriate Size**: Functional units of about 2-5 nodes (subgraphs, workflow patterns, tool integrations, etc.)
 
 ### When to Use
 
-Use langgraph-master:langgraph-engineer in the following cases:
+Use langgraph-architect:langgraph-engineer in the following cases:
 
 1. **When functional module implementation is needed**
 
@@ -124,9 +124,9 @@ Use langgraph-master:langgraph-engineer in the following cases:
 
 ```
 Planner → Decompose into functional units
-  ├─ langgraph-master:langgraph-engineer 1: Intent analysis module (parallel)
+  ├─ langgraph-architect:langgraph-engineer 1: Intent analysis module (parallel)
   │  └─ analyze + classify + route nodes + conditional edges
-  └─ langgraph-master:langgraph-engineer 2: RAG search module (parallel)
+  └─ langgraph-architect:langgraph-engineer 2: RAG search module (parallel)
      └─ retrieve + rerank + generate nodes + state management
 Orchestrator → Integrate modules to assemble graph
 ```
@@ -146,7 +146,7 @@ Orchestrator → Integrate modules to assemble graph
 
 3. **Parallel Execution**
 
-   Assign one functional module implementation to each langgraph-master:langgraph-engineer agent and execute in parallel
+   Assign one functional module implementation to each langgraph-architect:langgraph-engineer agent and execute in parallel
 
    - Implement independent functional modules simultaneously
 
@@ -162,7 +162,7 @@ Orchestrator → Integrate modules to assemble graph
 
 ### Functional Module Examples
 
-**Appropriate Size (langgraph-master:langgraph-engineer scope)**:
+**Appropriate Size (langgraph-architect:langgraph-engineer scope)**:
 
 - RAG search functionality: retrieve + rerank + generate (3 nodes)
 - Intent analysis: analyze + classify + route (2-3 nodes)

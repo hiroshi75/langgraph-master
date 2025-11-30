@@ -1,13 +1,13 @@
 {
-  "name": "langgraph-master",
+  "name": "langgraph-architect",
   "owner": {
     "name": "Hiroshi Ayukawa"
   },
   "plugins": [
     {
-      "name": "langgraph-master",
+      "name": "langgraph-architect",
       "description": "LangGraph development accelerator - Architecture patterns, parallel module development, and data-driven optimization for building AI agents",
-      "source": "./langgraph-master"
+      "source": "./langgraph-architect"
     }
   ]
 }

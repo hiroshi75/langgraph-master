@@ -245,7 +245,7 @@ See analysis/comparison_report.md for detailed analysis.
 
 2. **評価再実行**: マージ後のパフォーマンス確認
    ```bash
-   python .langgraph-master/evaluation/evaluate.py
+   python .langgraph-architect/evaluation/evaluate.py
    ```
 
 ### 継続的なモニタリング

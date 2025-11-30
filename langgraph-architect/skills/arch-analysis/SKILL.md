@@ -44,7 +44,7 @@ Use this skill in the following situations:
 **Purpose**: Prepare for performance measurement
 
 **Actions**:
-1. Verify existence of evaluation program (`.langgraph-master/evaluation/` or specified directory)
+1. Verify existence of evaluation program (`.langgraph-architect/evaluation/` or specified directory)
 2. If not present, confirm evaluation criteria with user and create
 3. Verify test cases
 
@@ -116,7 +116,7 @@ Use this skill in the following situations:
    - Complex processing → Subgraph
    - Staged processing → Prompt Chaining, Map-Reduce
 
-2. **Reference langgraph-master skill**
+2. **Reference langgraph-architect skill**
    - Verify characteristics of each pattern
    - Evaluate application conditions
    - Reference implementation examples
@@ -443,7 +443,7 @@ analyze_intent → [RAG Subgraph] → generate_response
 
 ### Reference Skills
 
-- **langgraph-master skill**: Architecture pattern reference
+- **langgraph-architect skill**: Architecture pattern reference
 
 ### Evaluation Program
 
@@ -466,6 +466,6 @@ analyze_intent → [RAG Subgraph] → generate_response
 
 ## 🔗 Related Resources
 
-- [langgraph-master skill](../langgraph-master/SKILL.md) - Architecture patterns
+- [langgraph-architect skill](../langgraph-architect/SKILL.md) - Architecture patterns
 - [arch-tune command](../../commands/arch-tune.md) - Command that uses this skill
 - [fine-tune skill](../fine-tune/SKILL.md) - Prompt optimization
