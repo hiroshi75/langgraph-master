@@ -47,9 +47,32 @@ Claude decomposes → spawns parallel agents:
 Both run in parallel → integrate into complete graph
 ```
 
-### 3. Architecture-Level Optimization
+### 3. Prompt-Level Optimization (fine-tune)
 
-The `/arch-tune` command explores multiple graph improvements in parallel:
+The `fine-tune` skill optimizes your LangGraph prompts without changing graph structure. It activates automatically when Claude detects optimization needs, or invoke manually:
+
+```bash
+/langgraph-master:fine-tune
+```
+
+**Auto-activation triggers:**
+- "improve accuracy", "reduce cost", "optimize prompts"
+- "the output is not good enough", "responses are inconsistent"
+
+**4-Phase Workflow:**
+
+```
+Phase 1: Baseline    → Measure current accuracy, latency, cost
+Phase 2: Analysis    → Identify underperforming nodes and patterns
+Phase 3: Optimize    → Apply techniques (few-shot, CoT, constraints)
+Phase 4: Validate    → Statistical validation (3-5 runs) and apply
+```
+
+**Typical gains:** Accuracy +10-20%, Cost -20-60%
+
+### 4. Architecture-Level Optimization (arch-tune)
+
+The `/arch-tune` command explores multiple graph structure improvements in parallel:
 
 ```bash
 /arch-tune "Improve latency to under 2.0s and accuracy to 90%"
@@ -62,6 +85,8 @@ What happens:
 3. **Optimize** prompts and parameters for each variant (parallel)
 4. **Compare** results with statistical validation
 5. **Merge** the winner with your approval
+
+**Typical gains:** Latency -20-50%, Accuracy +10-30%
 
 ## Skills
 
@@ -163,15 +188,6 @@ Result: Complete implementation in ~20 min instead of ~60 min
 │  - Clean up worktrees and branches                              │
 └─────────────────────────────────────────────────────────────────┘
 ```
-
-## Fine-Tune vs Arch-Tune
-
-| Aspect            | fine-tune                                      | arch-tune                             |
-| ----------------- | ---------------------------------------------- | ------------------------------------- |
-| **Scope**         | Prompts and parameters only                    | Graph structure changes               |
-| **Graph changes** | None                                           | Adds/removes nodes, edges, subgraphs  |
-| **Use when**      | Graph design is good, outputs need improvement | Architecture itself is the bottleneck |
-| **Typical gains** | Accuracy +10-20%, Cost -20-60%                 | Latency -20-50%, Accuracy +10-30%     |
 
 ## Requirements
 

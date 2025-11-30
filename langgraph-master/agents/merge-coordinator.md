@@ -120,7 +120,7 @@ For each worktree:
 Verification:
 ├─ git worktree list (should show only main worktree)
 ├─ git branch -a (merged branch deleted)
-└─ Check .worktree/ directory removed
+└─ Check worktree/ directory removed
 
 Final state:
 └─ Clean repository with merged changes
@@ -147,6 +147,7 @@ Generate completion message:
 ## 推奨案: Proposal X - [Name]
 
 **期待される改善**:
+
 - ✅ Accuracy: 75.0% → 82.0% (+7.0%, +9%)
 - ✅ Latency: 3.5s → 2.8s (-0.7s, -20%)
 - ✅ Cost: $0.020 → $0.014 (-$0.006, -30%)
@@ -154,6 +155,7 @@ Generate completion message:
 **実装複雑度**: 中
 
 **推奨理由**:
+
 1. [Key reason 1]
 2. [Key reason 2]
 3. [Key reason 3]
@@ -162,11 +164,11 @@ Generate completion message:
 
 ## 📊 全提案の比較
 
-| 提案 | Accuracy | Latency | Cost | 複雑度 | 総合評価 |
-|------|----------|---------|------|--------|---------|
-| Proposal 1 | 75.0% | 2.7s | $0.020 | 低 | ⭐⭐⭐⭐ |
+| 提案                  | Accuracy  | Latency  | Cost       | 複雑度 | 総合評価       |
+| --------------------- | --------- | -------- | ---------- | ------ | -------------- |
+| Proposal 1            | 75.0%     | 2.7s     | $0.020     | 低     | ⭐⭐⭐⭐       |
 | **Proposal 2 (推奨)** | **82.0%** | **2.8s** | **$0.014** | **中** | **⭐⭐⭐⭐⭐** |
-| Proposal 3 | 88.0% | 3.8s | $0.022 | 高 | ⭐⭐⭐ |
+| Proposal 3            | 88.0%     | 3.8s     | $0.022     | 高     | ⭐⭐⭐         |
 
 詳細: `analysis/comparison_report.md` を参照
 
@@ -199,7 +201,7 @@ See analysis/comparison_report.md for detailed analysis.
 
 ### Completion Message Format
 
-```markdown
+````markdown
 # ✅ Architecture Tuning 完了
 
 ## マージ結果
@@ -217,14 +219,17 @@ See analysis/comparison_report.md for detailed analysis.
 ## クリーンアップ完了
 
 **削除された worktree**:
-- `.worktree/proposal-1/` → 削除完了
-- `.worktree/proposal-3/` → 削除完了
+
+- `worktree/proposal-1/` → 削除完了
+- `worktree/proposal-3/` → 削除完了
 
 **削除されたブランチ**:
+
 - `proposal-1` → 削除完了
 - `proposal-3` → 削除完了
 
 **保持**:
+
 - `proposal-2` → マージ済みブランチとして保持（必要に応じて削除可能）
 
 ## 🚀 次のステップ
@@ -236,6 +241,7 @@ See analysis/comparison_report.md for detailed analysis.
    # テストスイートを実行
    pytest tests/
    ```
+````
 
 2. **評価再実行**: マージ後のパフォーマンス確認
    ```bash
@@ -245,11 +251,13 @@ See analysis/comparison_report.md for detailed analysis.
 ### 継続的なモニタリング
 
 1. **本番環境デプロイ前の検証**:
+
    - ステージング環境での検証
    - エッジケースのテスト
    - 負荷テストの実施
 
 2. **モニタリング設定**:
+
    - レイテンシメトリクスの監視
    - エラーレートの追跡
    - コスト使用量の監視
@@ -261,10 +269,12 @@ See analysis/comparison_report.md for detailed analysis.
 ---
 
 **Note**: マージされたブランチ `proposal-2` は以下のコマンドで削除できます：
+
 ```bash
 git branch -d proposal-2
 ```
-```
+
+````
 
 ## User Interaction Guidelines
 
@@ -293,22 +303,25 @@ AskUserQuestion(
         ]
     }]
 )
-```
+````
 
 ### Response Handling
 
 **If "推奨案をマージ" selected**:
+
 1. Merge recommended proposal
 2. Clean up other worktrees
 3. Generate completion message
 
 **If "別の案を選択" selected**:
+
 1. Present alternative options
 2. Ask for specific proposal selection
 3. Merge selected proposal
 4. Clean up others
 
 **If "全て却下" selected**:
+
 1. Skip all merges
 2. Clean up all worktrees
 3. Generate rejection message with reasoning options
@@ -357,8 +370,8 @@ git log -1 --oneline
 git worktree list
 
 # Remove unmerged worktrees
-git worktree remove .worktree/proposal-1
-git worktree remove .worktree/proposal-3
+git worktree remove worktree/proposal-1
+git worktree remove worktree/proposal-3
 
 # Verify removal
 git worktree list  # Should only show main
@@ -369,7 +382,7 @@ git branch -D proposal-1  # Force delete if needed
 
 # Final verification
 git branch -a
-ls -la .worktree/  # Should not exist or be empty
+ls -la worktree/  # Should not exist or be empty
 ```
 
 ## Error Handling
@@ -400,7 +413,7 @@ If worktree removal fails:
 4. Document any manual cleanup needed
 
 Example:
-git worktree remove --force .worktree/proposal-1
+git worktree remove --force worktree/proposal-1
 ```
 
 ### Branch Deletion Failures

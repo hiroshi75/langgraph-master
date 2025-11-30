@@ -64,12 +64,12 @@ Update each Phase to `in_progress` at the start and `completed` upon completion.
 
    ```bash
    # Create worktree for each Proposal 1, 2, 3
-   git worktree add .worktree/proposal-1 -b proposal-1
-   git worktree add .worktree/proposal-2 -b proposal-2
-   git worktree add .worktree/proposal-3 -b proposal-3
+   git worktree add worktree/proposal-1 -b proposal-1
+   git worktree add worktree/proposal-2 -b proposal-2
+   git worktree add worktree/proposal-3 -b proposal-3
 
    # Copy analysis results and .env to each worktree
-   for dir in .worktree/*/; do
+   for dir in worktree/*/; do
      cp -r analysis "$dir"
      cp .env "$dir"
    done
@@ -82,7 +82,7 @@ Update each Phase to `in_progress` at the start and `completed` upon completion.
 
    ```
    project/
-   ├── .worktree/
+   ├── worktree/
    │   ├── proposal-1/          # Independent working environment 1
    │   │   ├── analysis/        # Analysis results (copy **Copy as files after creating worktree, don't commit and pass!**)
    │   │   │   ├── baseline_performance.json
@@ -100,7 +100,7 @@ Update each Phase to `in_progress` at the start and `completed` upon completion.
    **Launch langgraph-engineer agent for each Proposal**:
 
    ```markdown
-   Working worktree: .worktree/proposal-X/
+   Working worktree: worktree/proposal-X/
    Improvement proposal: Proposal X (from analysis/improvement_proposals.md)
    Task: Implement graph structure changes and test that it works correctly (add/modify nodes, edges, subgraphs)
 
@@ -127,7 +127,7 @@ Update each Phase to `in_progress` at the start and `completed` upon completion.
    **After Phase 2 completion, launch langgraph-tuner agent for each worktree Proposal implementation**:
 
    ```markdown
-   Working worktree: .worktree/proposal-X/
+   Working worktree: worktree/proposal-X/
    Improvement proposal: Proposal X (from analysis/improvement_proposals.md)
    Optimization goal: [User-specified goal]
 
@@ -135,7 +135,7 @@ Update each Phase to `in_progress` at the start and `completed` upon completion.
 
    Result report:
 
-   - Filename: `proposal_X_result.md` (save directly under .worktree/proposal-X/)
+   - Filename: `proposal_X_result.md` (save directly under worktree/proposal-X/)
    - Format: Summarize experiment results and insights concisely
    - Required items: Comparison table with baseline, improvement rate, key changes, recommendations
 
@@ -166,9 +166,9 @@ Update each Phase to `in_progress` at the start and `completed` upon completion.
 ```markdown
 Implementation reports: Read `proposal_X_result.md` from each worktree
 
-- .worktree/proposal-1/proposal_1_result.md
-- .worktree/proposal-2/proposal_2_result.md
-- .worktree/proposal-3/proposal_3_result.md
+- worktree/proposal-1/proposal_1_result.md
+- worktree/proposal-2/proposal_2_result.md
+- worktree/proposal-3/proposal_3_result.md
   Optimization goal: [User-specified goal]
 
 Execute comparative analysis as proposal-comparator.
@@ -185,7 +185,7 @@ See agents/proposal-comparator.md for details.
 
 ```markdown
 Comparison report: analysis/comparison_report.md
-Worktree: .worktree/proposal-\*/
+Worktree: worktree/proposal-\*/
 
 Execute user approval and merge as merge-coordinator.
 See agents/merge-coordinator.md for details.
@@ -198,7 +198,7 @@ See agents/merge-coordinator.md for details.
 **Create**:
 
 ```bash
-git worktree add .worktree/<branch-name> -b <branch-name>
+git worktree add worktree/<branch-name> -b <branch-name>
 ```
 
 **List**:
@@ -210,7 +210,7 @@ git worktree list
 **Remove**:
 
 ```bash
-git worktree remove .worktree/<branch-name>
+git worktree remove worktree/<branch-name>
 git branch -d <branch-name>
 ```
 
@@ -228,7 +228,7 @@ Claude Code automatically executes in parallel by calling multiple `Task` tools 
 
 ### Git Worktree
 
-1. Add `.worktree/` to `.gitignore`
+1. Add `worktree/` to `.gitignore`
 2. Each worktree is an independent working directory
 3. No conflicts even with parallel execution
 
@@ -254,7 +254,7 @@ Claude Code automatically executes in parallel by calling multiple `Task` tools 
 
 1. Delete unnecessary worktrees after merge
 2. Delete branches as well
-3. Verify `.worktree/` directory
+3. Verify `worktree/` directory
 
 ## 🎓 Usage Examples
 

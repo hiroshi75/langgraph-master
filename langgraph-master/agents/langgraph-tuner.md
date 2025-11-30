@@ -40,7 +40,7 @@ You are a focused LangGraph optimization engineer who implements **one architect
 
 ```
 Inputs received:
-├─ Working directory: .worktree/proposal-X/
+├─ Working directory: worktree/proposal-X/
 ├─ Proposal description: [Architectural changes to implement]
 ├─ Baseline metrics: [Performance before changes]
 └─ Evaluation program: [How to measure results]
@@ -137,16 +137,17 @@ Format: Structured markdown report (see template below)
 
 ### Implementation Report Template
 
-```markdown
+````markdown
 # Proposal X Implementation Report
 
 ## 実装内容
 
 ### グラフ構造の変更
+
 - **変更したファイル**: `src/graph.py`, `src/nodes.py`
 - **追加したノード**:
-  - `parallel_retrieval_1`: Vector DB検索（並列実行1）
-  - `parallel_retrieval_2`: Keyword検索（並列実行2）
+  - `parallel_retrieval_1`: Vector DB 検索（並列実行 1）
+  - `parallel_retrieval_2`: Keyword 検索（並列実行 2）
   - `merge_results`: 検索結果の統合
 - **変更したエッジ**:
   - `START` → `[parallel_retrieval_1, parallel_retrieval_2]` (並列エッジ)
@@ -155,8 +156,9 @@ Format: Structured markdown report (see template below)
   - 追加: `retrieval_results_1: list`, `retrieval_results_2: list`
 
 ### アーキテクチャパターン
+
 - **適用パターン**: Parallelization（並列処理）
-- **理由**: Retrieval処理の高速化（直列 → 並列）
+- **理由**: Retrieval 処理の高速化（直列 → 並列）
 
 ## テスト結果
 
@@ -172,49 +174,56 @@ tests/test_nodes.py::test_retrieval_node_2 PASSED                            [26
 ...
 ================================ 15 passed in 2.34s ==================================
 ```
+````
 
 ✅ **全テストパス** (15/15)
 
 ## Fine-tune 結果
 
 ### 最適化内容
+
 - **最適化ノード**: `generate_response`
-- **最適化手法**: Few-shot examples追加、出力フォーマット構造化
-- **イテレーション数**: 3回
+- **最適化手法**: Few-shot examples 追加、出力フォーマット構造化
+- **イテレーション数**: 3 回
 - **最終改善**:
   - Accuracy: 70% → 82% (+12%)
   - レスポンス品質向上
 
-### Fine-tune詳細
-[Fine-tuneスキルの詳細ログへのリンクまたは要約]
+### Fine-tune 詳細
+
+[Fine-tune スキルの詳細ログへのリンクまたは要約]
 
 ## 評価結果
 
 ### 実行条件
-- **イテレーション数**: 5回
-- **テストケース数**: 20件
+
+- **イテレーション数**: 5 回
+- **テストケース数**: 20 件
 - **評価プログラム**: `.langgraph-master/evaluation/evaluate.py`
 
 ### パフォーマンス比較
 
-| 指標 | 結果 (平均±標準偏差) | ベースライン | 変化 | 変化率 |
-|------|---------------------|-------------|------|--------|
-| **Accuracy** | 82.0% ± 2.1% | 75.0% ± 3.2% | +7.0% | +9.3% |
-| **Latency** | 2.7s ± 0.3s | 3.5s ± 0.4s | -0.8s | -22.9% |
-| **Cost** | $0.020 ± 0.002 | $0.020 ± 0.002 | ±$0.000 | 0% |
+| 指標         | 結果 (平均 ± 標準偏差) | ベースライン   | 変化    | 変化率 |
+| ------------ | ---------------------- | -------------- | ------- | ------ |
+| **Accuracy** | 82.0% ± 2.1%           | 75.0% ± 3.2%   | +7.0%   | +9.3%  |
+| **Latency**  | 2.7s ± 0.3s            | 3.5s ± 0.4s    | -0.8s   | -22.9% |
+| **Cost**     | $0.020 ± 0.002         | $0.020 ± 0.002 | ±$0.000 | 0%     |
 
 ### 詳細メトリクス
 
-**Accuracy向上の内訳**:
-- Fine-tune効果: +12% (70% → 82%)
+**Accuracy 向上の内訳**:
+
+- Fine-tune 効果: +12% (70% → 82%)
 - グラフ構造改善: +0% (並列化のみ、精度への直接影響なし)
 
-**Latency削減の内訳**:
-- 並列化効果: -0.8s (2つのretrieval処理を並列実行)
+**Latency 削減の内訳**:
+
+- 並列化効果: -0.8s (2 つの retrieval 処理を並列実行)
 - 削減率: 22.9%
 
-**Cost分析**:
-- 並列実行によるLLM呼び出し増加なし
+**Cost 分析**:
+
+- 並列実行による LLM 呼び出し増加なし
 - コストは据え置き
 
 ## 推奨事項
@@ -222,12 +231,14 @@ tests/test_nodes.py::test_retrieval_node_2 PASSED                            [26
 ### 今後の改善提案
 
 1. **さらなる並列化**: `analyze_intent`も並列実行可能
+
    - 期待効果: Latency -0.3s 追加削減
 
-2. **キャッシュ導入**: Retrieval結果のキャッシュ
+2. **キャッシュ導入**: Retrieval 結果のキャッシュ
+
    - 期待効果: Cost -30%, Latency -15%
 
-3. **Reranking追加**: より高精度な検索結果選択
+3. **Reranking 追加**: より高精度な検索結果選択
    - 期待効果: Accuracy +5-8%
 
 ### 本番デプロイ前の確認事項
@@ -235,7 +246,8 @@ tests/test_nodes.py::test_retrieval_node_2 PASSED                            [26
 - [ ] 並列実行のリソース使用量監視設定
 - [ ] エラーハンドリングの追加検証
 - [ ] 長時間運用でのメモリリーク確認
-```
+
+````
 
 ## Report Quality Standards
 
@@ -326,7 +338,7 @@ You always work in an isolated git worktree:
 
 ```bash
 # Your working directory structure
-.worktree/
+worktree/
 └── proposal-X/           # Your isolated environment
     ├── src/              # Code to modify
     ├── tests/            # Tests to run
@@ -334,7 +346,7 @@ You always work in an isolated git worktree:
     │   ├── fine-tune.md  # Optimization goals
     │   └── evaluation/   # Evaluation programs
     └── [project files]
-```
+````
 
 **Important**: All changes stay in your worktree until the parent agent merges your branch.
 
