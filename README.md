@@ -4,14 +4,12 @@
 
 A Claude Code plugin that provides architecture patterns, parallel development workflows, and data-driven optimization for LangGraph applications.
 
-<p align="center">
-  <img src="main_ss.gif" alt="LangGraph Master in action" width="800">
-</p>
+![LangGraph Architect in Action](./img/main_ss.gif)
 
 ```
 # Install
 /plugin marketplace add hiroshi75/langgraph-architect
-/plugin install langgraph-architect@hiroshi75
+/plugin install langgraph-architect@langgraph-architect
 ```
 
 ## What You Get
@@ -20,9 +18,8 @@ A Claude Code plugin that provides architecture patterns, parallel development w
 
 Claude automatically provides architecture guidance when you work with LangGraph:
 
-```python
-from langgraph.graph import StateGraph
-# Claude detects this and offers patterns, best practices, and implementation guidance
+```
+Build a Gemini+grounding deep-research agent that runs on the CLI using LangGraph.
 ```
 
 40+ documentation files covering:
